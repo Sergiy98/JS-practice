@@ -22,5 +22,24 @@ const movieDB = {
         "Одержимость",
         "Скотт Пилигрим против..."
     ]
-};
+},
+    ads = document.querySelectorAll('.promo__adv img'),
+    genres = document.querySelector('.promo__genre'),
+    bg = document.querySelector('.promo__bg'),
+    filmsList = bg.querySelectorAll('.promo__interactive-item');
+
+    ads.forEach(item => {
+        item.remove();
+    });
+
+    genres.textContent = 'драма';
+
+    bg.style.cssText = "background: url(../img/bg.jpg);";
+
+    movieDB.movies.sort();
+
+    filmsList.forEach((item, i) => {
+        item.textContent = `${i + 1}. ${movieDB.movies[i]}`;
+
+    });
 
